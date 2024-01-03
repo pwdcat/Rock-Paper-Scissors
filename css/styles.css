@@ -3,13 +3,39 @@
     justify-content: center;
     align-items: center;
 }
+
+.body{
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+    flex-direction: column;
+}
+
 button{
     width: 100px;
     height: 100px;
 }
+
 .button-container{
-    margin-top: 500px;
+    margin-top: 200px;
     width: 500px;
     height: fit-content;
     justify-content: space-between;
+}
+
+#results{
+    margin-top: 200px;
+    font-size: x-large;
+}
+
+#score{
+    display: flex;
+    margin-top: 100px;
+    width: 500px;
+    box-sizing: border-box;
+    padding: 0px 50px;
+    justify-content: space-between;
+}
+
+#player, #computer{
+    font-size: xx-large;
 }

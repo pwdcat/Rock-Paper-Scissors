@@ -1,17 +1,49 @@
 let playerScore = 0;
 let computerScore = 0;
 
-const buttons = document.querySelectorAll('button');
+/* RPS + Output Result */
+const choices = document.querySelectorAll('.choice');
 const results = document.getElementById('results');
+
+/* Player + Computer Scores */
 const computer = document.getElementById('computer');
 const player = document.getElementById('player');
 
-buttons.forEach((button) =>{
+/* Pop up, Win/Lose Screen */
+const closeButton = document.getElementById('close');
+const popup = document.getElementById('popup');
+const overlay = document.getElementById('overlay');
+const p = popup.querySelector('p');
+
+choices.forEach((button) =>{
+    button.textContent = button.id;
     button.addEventListener('click', ()=> {
         results.textContent = playRound(button.id, getComputerChoice());
     });
 });
 
+
+
+function showPopup() {
+    popup.style.display = 'block';
+    overlay.style.display = 'flex';
+}
+
+function hidePopup() {
+    popup.style.display = 'none';
+    overlay.style.display = 'none';
+
+    computerScore = 0; playerScore = 0;
+
+    updateScore();
+}
+
+closeButton.addEventListener('click', hidePopup);
+
+function updateScore(){
+    computer.textContent = "Computer: " + computerScore;
+    player.textContent = "Player: " + playerScore;
+}
 function getComputerChoice(){
     let num = Math.floor(Math.random() * 3)
     switch(num){
@@ -61,8 +93,16 @@ function playRound(playerSelection, computerSection){
             break;
     }
 
-    computer.textContent = computerScore;
-    player.textContent = playerScore;
+    updateScore();
+
+    if(playerScore == 5){
+        p.textContent = "You Won!";
+        showPopup();
+    }
+    if(computerScore == 5){
+        p.textContent = "You Lost."
+        showPopup();
+    }
     return output;
 
 }

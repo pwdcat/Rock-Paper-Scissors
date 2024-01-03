@@ -7,17 +7,24 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body class="body center">
+    <div id="overlay">
+        <div id="popup">
+            <p></p>
+            <button id="close">Close</button>
+        </div>
+    </div>
+
     <div id="results">Choose</div>
 
     <div id="score">
-        <div id="player">0</div>
-        <div id="computer">0</div>
+        <div id="player">Player: 0</div>
+        <div id="computer">Computer: 0</div>
     </div>
 
     <div class="button-container center">
-        <button id="Rock"></button>
-        <button id="Paper"></button>
-        <button id="Scissors"></button>
+        <button class="choice" id="Rock"></button>
+        <button class="choice" id="Paper"></button>
+        <button class="choice" id="Scissors"></button>
     </div>
     <script src="./js/main.js"></script>
 </body>

@@ -1,0 +1,15 @@
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    width: 100px;
+    height: 100px;
+}
+.button-container{
+    margin-top: 500px;
+    width: 500px;
+    height: fit-content;
+    justify-content: space-between;
+}

@@ -107,5 +107,8 @@ function playRound(playerSelection, computerSection){
 
 }
 
+document.getElementById("footer").textContent = "Copyright © " + new Date().getFullYear() + " pwdcat";
+
+
 
 
